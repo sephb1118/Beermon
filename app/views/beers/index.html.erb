@@ -1,0 +1,22 @@
+<h1>Beers You've Tasted</h1>
+<%= link_to 'Taste a Beer', new_beer_path %>
+<table>
+  <tr>
+	<th>Brewery</th>
+	<th>Beer</th>
+	<th>Tasting Notes</th>
+  </tr>
+  
+  <% @beers.each do |beer| %>
+    <tr>
+    	<td><%= beer.brewery %></td>
+    	<td><%= beer.name %></td>
+    	<td><%= beer.tasting_notes %></td>
+    	<td><%= link_to 'Show', beer_path(beer) %></td>
+    	<td><%= link_to 'Edit', edit_beer_path(beer) %></td>
+    	<td><%= link_to 'Destroy', beer_path(beer), method: :delete, data: {confirm: 'Are You Sure?'} %></td>
+    </tr>
+  <% end %>
+
+</table>
+

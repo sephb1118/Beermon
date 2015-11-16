@@ -1,0 +1,33 @@
+<%= form_for @beer do |f| %>
+  <% if @beer.errors.any? %>
+    <div id="error_explanation">
+   	  <h2>
+   	  	<%= pluralize(@beer.errors.count, "error")%> Could not save this beer you tasted:
+   	  </h2>
+   	  <ul>
+   	  	<% @beer.errors.full_messages.each do |msg| %>
+   	  	  <li><%= msg %></li>
+   	  	<% end %>
+   	  </ul>
+    </div>
+  <% end %>
+  
+  <p>
+  	<%= f.label :brewery %><br>
+  	<%= f.text_field :brewery %>
+  </p>
+  
+  <p>
+  	<%= f.label :name %><br>
+  	<%= f.text_field :name %>
+  </p>
+
+  <p>
+  	<%= f.label :tasting_notes %><br>
+  	<%= f.text_area :tasting_notes %>
+  </p>
+
+  <p>
+  	<%= f.submit %>
+  </p>
+<% end%>
