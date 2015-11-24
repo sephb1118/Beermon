@@ -7,8 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div id = "user_header">
+  <!-- link_to "Sign Up", users_new_path -->
+  <%= link_to "Sign Up Here", signup_path, class: "btn-lg btn-primary" %>
+</div>
+<div class="container">
+  <% flash.each do |message_type, message| %>
+    <div class="alert alert-<%= message_type %>"><%= message %></div>
+  <% end %>
 
-<%= yield %>
-
+  <%= yield %>
+  <%= debug(params) if Rails.env.development? %>
+</div>
 </body>
 </html>

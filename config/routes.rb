@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get 'users/new'
-
+  get 'signup' => 'users#new'
+  resources :users
+  
   resources :beers do
     resources :comments
   end
