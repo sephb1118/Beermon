@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_before_action :login_required
   def new
     @user = User.new
   end
@@ -6,7 +7,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params) # Not the final implementation!
     if @user.save
-      flash[:success] = "Welcome to Beermon!<br>Start Tasting 'Em All!"
+      log_in @user
+      flash[:success] = "Welcome to Beermon! Start Tasting 'Em All!"
       redirect_to @user
       # Handle a successful save.
     else
