@@ -1,5 +1,4 @@
 class BeersController < ApplicationController
-  http_basic_authenticate_with name: "Mr_S", password: "homebrew", except: [:index, :show]
   
   def index
     @beers = Beer.all
