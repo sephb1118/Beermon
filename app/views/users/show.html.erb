@@ -5,6 +5,18 @@
        <h1>
          <%= gravatar_for @user %>
          <%= @user.name %>
+         <%= link_to 'Taste a Beer', new_beer_path, class: "btn-lg btn-primary btn-block"%>
+         <%= yield :beers %>
+  <% :beers.each do |beer| %>
+    <tr>
+    	<td><%= beer.brewery %></td>
+    	<td><%= beer.name %></td>
+    	<td><%= beer.tasting_notes %></td>
+    	<td><%= link_to 'Show', beer_path(beer) %></td>
+    	<td><%= link_to 'Edit', edit_beer_path(beer) %></td>
+    	<td><%= link_to 'Destroy', beer_path(beer), method: :delete, data: {confirm: 'Are You Sure?'} %></td>
+    </tr>
+  <% end %>
        </h1>
      </section>
    </aside>
