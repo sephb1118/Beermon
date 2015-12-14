@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
+  get 'sessions/new'
+
   root 'ontap#index'
   
   get 'sessions/new'
