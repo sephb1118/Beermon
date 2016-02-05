@@ -1,0 +1,11 @@
+<br>
+<li id="beer" >
+  <%= link_to gravatar_for(beer.user), beer_path(beer) %>
+  <span class="brewery"><%= beer.brewery.upcase %>: <%= beer.name %></span>
+  <span class="tasting_notes"><%= beer.tasting_notes %></span>
+  <span class="timestamp">
+    Tasted <%= time_ago_in_words(beer.created_at) %> ago. 
+  </span>
+</li>
+  
+  
