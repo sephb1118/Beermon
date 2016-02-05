@@ -3,25 +3,26 @@
 
   <p>
   	<%= f.label :name %><br>
-  	<%= f.text_field :name, class: 'form_control' %>
+  	<%= f.text_field :name, class: 'form-control' %>
   </p>
   
   <p>
   	<%= f.label :email %><br>
-  	<%= f.email_field :email, class: 'form_control' %>
+  	<%= f.email_field :email, class: 'form-control' %>
   </p>
   
   <p>
   	<%= f.label :password %><br>
-  	<%= f.password_field :password, class: 'form_control' %>
+  	<%= f.password_field :password, class: 'form-control' %>
   </p>
   
   <p>
   	<%= f.label :password_confirmation, "Password Confirmation" %><br>
-  	<%= f.password_field :password_confirmation, class: 'form_control'  %>
+  	<%= f.password_field :password_confirmation, class: 'form-control'  %>
   </p>
   
-  <p>
-  	<%= f.submit "Start Tasting Beer", class: 'button'%>
-  </p>
+  <div class="logtaste">
+  	<%= f.submit "Start Tasting Beer", class: 'btn btn-primary'%>
+    <p><%= link_to "I don't want to sign up", root_path %></p>
+  </div>
 <% end%>

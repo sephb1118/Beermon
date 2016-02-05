@@ -1,4 +1,4 @@
-<h1>You just tasted <%= @beer.name %></h1>
+<h1>You've Tasted <%= @beer.name %></h1>
 <p>
   <strong>Brewed By:</strong>
   <%= @beer.brewery%>
@@ -17,6 +17,3 @@
 <%= render 'comments/form' %>
 <!--End Comment Section-->
 
-
-<%= link_to "I want to edit the beer I just tasted", edit_beer_path(@beer) %> |
-<%= link_to "I want to see the other beers I've Tasted", beers_path %>

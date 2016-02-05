@@ -11,12 +11,14 @@
   <!-- link_to "Sign Up", users_new_path -->
   
   <% if logged_in? %>
-    <%= link_to "USER", '#'%>
-    <%= link_to "Log out", logout_path, class: "btn-sm btn-primary", method: "delete" %>
+    <%= link_to current_user.name.upcase, user_path(current_user), class: "btn-sm btn-primary" %>
+    <%= link_to "LOG OUT", logout_path, class: "btn-sm btn-primary", method: "delete" %>
   <% else %>
-    <%= link_to "Sign Up Here", signup_path, class: "btn-sm btn-primary" %>
-    <%= link_to "Log In", login_path, class: "btn-sm btn-primary" %>    
+    <%= link_to "SIGN UP HERE", signup_path, class: "btn-sm btn-primary" %>
+    <%= link_to "LOG IN", login_path, class: "btn-sm btn-primary" %>     
   <% end %>
+  <%= link_to "BEERMON", root_path, id: "logo", class: "home" %>
+  <!--<p style= "float:right; margin-left:5px;">BEERMON</p>-->
 </div>
 <div class="container">
   <% flash.each do |message_type, message| %>

@@ -1,3 +1,24 @@
-<h1>Beermon: Gotta Taste em all!</h1>
-<%= link_to 'Beers Tasted', controller: 'beers' %>
+<h1 id="gotta">Beermon: Gotta Taste em all!</h1>
+<!--<%#= link_to 'Beers Tasted', controller: 'beers' %>-->
+  
+<table class="table table-striped">
+  <tr>
+	<th><%= sortable "brewery" %></th>
+	<th><%= sortable "name", "Beer" %></th>
+	<th><%= sortable "tasting_notes" %></th>
+  </tr>
+  
+  <% @beers.each do |beer| %>
+    <tr>
+    	<td><%= beer.brewery %></td>
+    	<td><%= beer.name %></td>
+    	<td><%= beer.tasting_notes %></td>
+    </tr>
+  <% end %>
+</table>
 
+
+<div class="btn-group btn-block" id="logsign">
+  <%= link_to "Log In", login_path, class: "btn btn-primary" %>
+  <%= link_to "Sign Up Here", signup_path, class: "btn btn-primary" %>
+</div>

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :login_required
+  
   def new
     @user = User.new
   end
@@ -18,6 +19,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+    @beers = @user.beers.paginate(page: params[:page], :per_page => 5)
   end
   
   private

@@ -11,23 +11,28 @@
    	  </ul>
     </div>
   <% end %>
-  
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">  
   <p>
   	<%= f.label :brewery %><br>
-  	<%= f.text_field :brewery %>
+  	<%= f.text_field :brewery, class: 'form-control' %>
   </p>
   
   <p>
   	<%= f.label :name %><br>
-  	<%= f.text_field :name %>
+  	<%= f.text_field :name, class: 'form-control' %>
   </p>
 
   <p>
   	<%= f.label :tasting_notes %><br>
-  	<%= f.text_area :tasting_notes %>
+  	<%= f.text_area :tasting_notes, class: 'form-control' %>
   </p>
-
+  </div>
+</div>
   <p>
-  	<%= f.submit "Add This Beer", class: 'button' %>
+  	<div class="btn-group btn-block" id="logsign">
+      <%= f.submit "Add This Beer", class: "btn btn-primary" %>
+      <%= link_to "Haven't Tasted It", user_path(current_user), class: "btn btn-primary" %>
+    </div>
   </p>
 <% end%>

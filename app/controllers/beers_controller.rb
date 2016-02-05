@@ -1,7 +1,8 @@
 class BeersController < ApplicationController
   
   def index
-    @beers = Beer.all
+    #@beers = Beer.all
+    @beers = Beer.order(params[:sort])
   end
 
   def show
@@ -13,7 +14,7 @@ class BeersController < ApplicationController
   end
   
   def create
-    @beer = Beer.new(beer_params)
+    @beer = current_user.beers.build(beer_params)
   
     if @beer.save
       redirect_to @beer

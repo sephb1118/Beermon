@@ -2,4 +2,6 @@
 
 <%= render 'form' %>
 
-<%= link_to "I haven't finished my beer", beers_path%>
+<div class="logtaste">
+  <%= link_to "I haven't finished my beer", user_path(current_user)%>
+</div>

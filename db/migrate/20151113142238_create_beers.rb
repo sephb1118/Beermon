@@ -7,5 +7,7 @@ class CreateBeers < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+    
+    add_index :beers, [:user_id]
   end
 end

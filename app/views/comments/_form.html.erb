@@ -1,13 +1,22 @@
 <%= form_for ([@beer, @beer.comments.build]) do |f| %>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
   <p>
   	<%= f.label :commenter %> <br>
-  	<%= f.text_field :commenter %>
+  	<%= f.text_field :commenter, class: 'form-control' %>
   </p>  
   <p>
   	<%= f.label :beerment %><br>
-	<%= f.text_area :body %>
-  </p>  
-  <p>
-  	<%= f.submit "Join The Discussion", class: "button" %>
+	<%= f.text_area :body, class: 'form-control' %>
   </p>
+  </div>
+</div>  
+  <div class= "logtaste">
+  	<%= f.submit "Join The Discussion", class: "btn btn-primary" %>
+    <p class="editsee">
+      <%= link_to "I want to edit the beer I just tasted", edit_beer_path(@beer) %> |
+      <%= link_to "I want to see the other beers I've Tasted", user_path(current_user) %>
+    </p>
+  </div>
 <% end %>
+
